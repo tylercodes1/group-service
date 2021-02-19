@@ -15,7 +15,7 @@ public class GroupService {
     private GroupRepo groupRepo;
 
     public MessageGroup save(MessageGroupDTO groupDTO) {
-        MessageGroup group = new MessageGroup(0, groupDTO.getGroupName());
+        MessageGroup group = new MessageGroup(0, groupDTO.getGroupName(), groupDTO.getRecipientId(), groupDTO.getSenderId());
         return groupRepo.save(group);
     }
 

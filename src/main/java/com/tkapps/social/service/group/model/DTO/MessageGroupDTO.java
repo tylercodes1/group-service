@@ -9,4 +9,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MessageGroupDTO {
     private String groupName;
+    private int recipientId;
+    private int senderId;
 }

@@ -19,4 +19,6 @@ public class MessageGroup {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int groupId;
     private String groupName;
+    private int recipientId;
+    private int senderId;
 }
