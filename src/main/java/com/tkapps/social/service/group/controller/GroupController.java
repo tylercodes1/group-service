@@ -1,5 +1,6 @@
 package com.tkapps.social.service.group.controller;
 
+import com.tkapps.social.service.group.VO.ResponseTemplateVO;
 import com.tkapps.social.service.group.model.DTO.MessageGroupDTO;
 import com.tkapps.social.service.group.model.MessageGroup;
 import com.tkapps.social.service.group.service.GroupService;
@@ -26,5 +27,10 @@ public class GroupController {
     @PostMapping("")
     public MessageGroup save(@RequestBody MessageGroupDTO groupDTO) {
         return groupService.save(groupDTO);
+    }
+
+    @GetMapping("/groupusers/{groupId}")
+    public ResponseTemplateVO getGroupWithUsers(@PathVariable("groupId") int groupId) {
+        return groupService.getGroupWithUsers(groupId);
     }
 }
