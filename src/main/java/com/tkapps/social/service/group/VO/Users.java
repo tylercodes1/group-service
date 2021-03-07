@@ -6,21 +6,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Users {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
     private String firstName;
     private String lastName;
     private String username;
     private String email;
     @ManyToMany(mappedBy = "users")
-    private Set<MessageGroup> messageGroups = new HashSet<MessageGroup>();
+    private List<MessageGroup> messageGroups;
 }
