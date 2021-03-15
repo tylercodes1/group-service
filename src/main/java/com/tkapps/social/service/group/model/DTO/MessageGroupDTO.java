@@ -1,6 +1,6 @@
 package com.tkapps.social.service.group.model.DTO;
 
-import com.tkapps.social.service.group.VO.Users;
+import com.tkapps.social.service.group.model.Users;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

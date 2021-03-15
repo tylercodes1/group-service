@@ -6,6 +6,7 @@ import com.tkapps.social.service.group.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -21,11 +22,17 @@ public class GroupController {
     }
 
     @GetMapping("/{id}")
-    public MessageGroup findByGroupId(@PathVariable("id") int id) { return groupService.findByGroupId(id); }
+    public MessageGroup findByGroupId(@PathVariable("id") int id) {
+        return groupService.findByGroupId(id);
+    }
+
+//    @GetMapping("/groupusers/{id}")
+//    public RestTemplateVO getUserWithMessageGroup(@PathVariable("id") int id) { return groupService.findUserMessageGroupById(id); }
 
     @PostMapping("")
     public MessageGroup save(@RequestBody MessageGroupDTO groupDTO) {
         return groupService.save(groupDTO);
     }
+
 
 }
